@@ -15,15 +15,28 @@ namespace Push
             _boxManager = boxManager;
         }
 
-        public void LoadMapFrom(string filePath)
+        public bool LoadMapFrom(string filePath)
         {
+            if (!File.Exists(filePath))
+            {
+                return false;
+            }
+
             var fileContent = File.ReadAllText(filePath);
             var fileLines = fileContent.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
             _tileManager.Clear();
+            _boxManager.Clear();
             var positionY = 0;
+
             foreach (var line in fileLines)
             {
+                if (line.StartsWith("-"))
+                {
+                    _tileManager.AddLevelMessage(line);
+                    continue;
+                }
+
                 var positionX = 0;
                 foreach (var character in line)
                 {
@@ -33,6 +46,8 @@ namespace Push
 
                 positionY++;
             }
+
+            return true;
         }
 
         private void AddTile(char character, int positionX, int positionY)
@@ -51,13 +66,16 @@ namespace Push
                 case 'A':
                     AddStart(positionX, positionY);
                     break;
-                case 'Z':
-                    AddEnd(positionX, positionY);
+                case 'Y':
+                    AddEnd(positionX, positionY, TileType.White);
                     break;
-                case 'O':
+                case 'Z':
+                    AddEnd(positionX, positionY, TileType.Black);
+                    break;
+                case '#':
                     AddTileWithBox(positionX, positionY, BoxColor.Red, TileType.White);
                     break;
-                case 'U':
+                case '%':
                     AddTileWithBox(positionX, positionY, BoxColor.Blue, TileType.Black);
                     break;
                 default:
@@ -117,11 +135,12 @@ namespace Push
             });
         }
 
-        private void AddEnd(int positionX, int positionY)
+        private void AddEnd(int positionX, int positionY, TileType tileType)
         {
             _tileManager.AddTile(new End
             {
                 Id = Guid.NewGuid(),
+                TileType = tileType,
                 PositionX = positionX,
                 PositionY = positionY
             });

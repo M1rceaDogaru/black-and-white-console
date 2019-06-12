@@ -75,7 +75,8 @@ namespace Push
                 }
 
                 if ((boxOnDestinationTile.Color == BoxColor.Red && boxDestinationTile.TileType == TileType.Black) ||
-                    (boxOnDestinationTile.Color == BoxColor.Blue && boxDestinationTile.TileType == TileType.White))
+                    (boxOnDestinationTile.Color == BoxColor.Blue && boxDestinationTile.TileType == TileType.White) ||
+                    boxDestinationTile.TileType == TileType.Null)
                 {
                     return false;
                 }

@@ -1,0 +1,12 @@
+﻿                    
+ BBBBBBBBBBBBBBBBBB 
+ BWWWWWWBBWWWWWWBBB 
+ BAWWWWW#WWWWWWYBBB 
+ BWWWWWWBBWWWWWWBBB 
+ BBBBBBBBBBBBBBBBBB 
+                    
+- You are @
+- Use WASD to move
+- You need to get to X
+- You can push # around
+- If you get stuck press R to reset current level

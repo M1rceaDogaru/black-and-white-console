@@ -1,0 +1,9 @@
+﻿                    
+ BBBBBBBBBBBBBBWWWY 
+ BWWWWWWWWWBBBBWWWW 
+ BAW#WSBBWWBBBBWWWW 
+ BWWWWWWWWWBB%BBBBB 
+ BBBBBBBBBBBBBSWWWW 
+                    
+- % is the opposite of #
+- You can push % over + tiles and it becomes a path when you're a black character on · tiles

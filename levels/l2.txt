@@ -1,0 +1,10 @@
+﻿                
+ BBBBBBBBBBBBBB 
+ BWWWWWWBBBBBBB 
+ BAWWWWSBBBBBZB 
+ BWWWWWWBBBBBBB 
+ BBBBBBBBBBBBBB 
+                
+- Go to S
+- You can use it to swap your color between black and white
+- A white character can only walk on + tiles while a black character can only walk on · tiles

@@ -1,0 +1,9 @@
+﻿                
+ BBBBBBBBBBBBBB 
+ BWWWWWWWWWBBBB 
+ BAW#WSBBWWBZBB 
+ BWWWWWWWWWBBBB 
+ BBBBBBBBBBBBBB 
+                
+- When you are on + as a white character, # becomes a path
+- Push # between the + tiles then switch to white character and use # as a bridge

@@ -1,0 +1,8 @@
+﻿                 
+          BBBWWY 
+ WWWWWWWWWBBBWWW 
+ AWWWSBBWWB%B%BW 
+ WWWWWBBWWBB%BBW 
+      BBBBBBBBBW 
+                 
+- 0 is out of bounds, you cannot walk or push anything there
