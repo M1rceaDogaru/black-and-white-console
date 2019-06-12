@@ -12,3 +12,5 @@
 ····WWWWW··W··W··W····W····WWWW·····
 
       Press any key to start
+
+   A game by Mircea Dogaru @ 2019
