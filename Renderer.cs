@@ -47,12 +47,12 @@ namespace Push
 
             for (var y = 0; y <= canvas.GetUpperBound(1); y++)
             {
-                var line = new StringBuilder();
                 for (var x = 0; x <= canvas.GetUpperBound(0); x++)
                 {
-                    line.Append(canvas[x, y]);
+                    WriteCharacter(canvas[x, y]);
                 }
-                Console.WriteLine(line.ToString());
+
+                Console.Write(Environment.NewLine);
             }
 
             var character = _characterController.GetCurrentCharacter();
@@ -61,6 +61,37 @@ namespace Push
             {
                 Console.WriteLine("Your character is on a switch. Press SPACE to change its color.");
             }
+        }
+
+        private void WriteCharacter(char character)
+        {
+            switch (character)
+            {
+                case PlayerChar:
+                    var player = _characterController.GetCurrentCharacter();
+                    Console.ForegroundColor = player.Color == CharacterColor.White ? ConsoleColor.White : ConsoleColor.Gray;
+                    break;
+                case BlackChar:
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    break;
+                case EndChar:
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    break;
+                case BlueBoxChar:
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    break;
+                case RedBoxChar:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    break;
+                case SwitchChar:
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    break;
+                default:
+                    Console.ForegroundColor = ConsoleColor.White;
+                    break;
+            }
+
+            Console.Write(character);
         }
 
         private char[,] GetCanvas()
